@@ -5,6 +5,7 @@
   --primary-white-color: #ffffff;
   --primary-background-color: #ffffff;
   --secondary-background-color: #2f303a;
+  --colorforborder: rgba(0, 0, 0, 0.1);
 }
 
 html {
@@ -360,12 +361,17 @@ p {
   justify-content: center;
   border-radius: 50%;
   background-color: var(--primary-background-color);
-  border: 1px solid var(--primary-text-color);
+  border: 1px solid var(--colorforborder);
   cursor: pointer;
 }
 
 .close {
-  stroke: var(--primary-text-color);
+  fill: var(--primary-text-color);
+}
+
+.close:focus,
+.close:hover {
+  fill: var(--accent-color);
 }
 
 .form {
@@ -413,7 +419,7 @@ textarea {
 .icon-modal {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 11px;
   transform: translatex(50%);
 }
 
@@ -451,6 +457,10 @@ textarea {
   outline: none;
 }
 
+.form-input:hover + .icon-modal,
+.form-input:active + .icon-modal {
+  fill: var(--accent-color);
+}
 .checkbox {
   position: absolute;
   width: 1px;
